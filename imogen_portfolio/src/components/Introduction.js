@@ -1,26 +1,46 @@
 import React from "react";
+import theme from "./theme";
+import '../App.css';
 
 
 import { Typography, Box, CardMedia, Avatar, Grid} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import profilePic from '../images/copyprofile.jpg';
+import '../App.css';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
+
+introBox: {
+    display: 'flex',
+    alignContent: 'flex-start'
+
+},
 
     introduction: {
         color: 'white',
         fontSize: '30px',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: "'Oswald', sans-serif",
+        width: "500px",
+        marginBottom: "20px"
+        
+    },
+
+    mediaBox: {
+        display: 'flex',
+        justifyContent: 'center',
+        
+
     },
 
     media: {
-        display: 'flex',
-        justifyContent: 'center',
+        
+        alignContent: 'center',
         width: '200px',
         height: '200px',
-        bottomMargin: '20px'
+        marginBottom: "250px"
     },
 
         hero: {
@@ -36,12 +56,28 @@ const useStyles = makeStyles({
             alignItems: "center",
             color: "#fff",
             fontSize: "2rem",
+            bottomPadding: "20px"
+            
+        },
+        name: {
+       
+            fontFamily:  "'Yeseva One', cursive",
+            textWeight: "bold",
+            fontSize: '40px',
+            color: "primary",
+            letterSpacing: "2px",
+            // width: "150px",
+            textAlign: "center",    
+            bottomPadding: "20px"
+
+        },
+        position: {
+            
         }
 
 
 
-    }
-);
+    }));
 
 
 const Introduction = () => {
@@ -51,8 +87,15 @@ const Introduction = () => {
 const classes = useStyles();
   
 return(
+    
+ <Box className={classes.position}>      
     <Box className={classes.hero}>
-        <Typography className={classes.introduction}> Aspiring Junior Web Developer with a love for design </Typography>
+        <Box>
+        <Typography className={classes.name}>Imogen Drews</Typography>
+        </Box>
+        <Box>
+        <Typography className={classes.introduction} color="primary"> Aspiring Junior Web Developer with a love for design </Typography>
+        </Box>
 <Grid container justify="center">
 <Avatar
 src={profilePic}
@@ -60,6 +103,7 @@ alt="Imogen's profile"
 className={classes.media}>
 </Avatar>
 </Grid>
+</Box>
 </Box>
 
 

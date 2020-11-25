@@ -1,41 +1,37 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { AppBar, Toolbar, Button, Typography, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles"
 import '../App.css';
+import Contact from "./Contact";
+import Menu from './Menu';
 
-const font =  "'Quicksand', sans-serif";
+const font =  "'Yeseva One', cursive";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     appBar: {
         width: '100%',
-        background: '#24705b',
-    },
-    navDisplayFlex: {
-        display: `flex`,
-        justifyContent: `space-between`
     },
 
+  menuDisplay: {
+      marginLeft: '20px',
+
+  },
+    
     name: {
-        display: 'flex',
-        justifyContent: `space-between`,
-        color: '#ffffcc',
-        fontSize: '30px',
-        // fontFamily: font
+       
+        fontFamily: font,
+        textWeight: "bold",
+        fontSize: '40px',
+        color: "primary",
+        letterSpacing: "2px",
+        width: "150px",
+        textAlign: "center",
+        marginRight: '70%'
+        
     },
-   
-    button: {
-        display: 'flex',
-        justifyContent: 'flex-end',
-        
-        color:'#ffffcc',
-        },
     
-     
-        
-
-    
-    
-})
+}));
 
 
 const NavBar = () => {
@@ -44,15 +40,13 @@ const classes = useStyles();
 
     return(
     
-        <AppBar position="static" className={classes.appBar}>
+        <AppBar position="static" className={classes.appBar} color="secondary">
             <Toolbar>
-                <Container className={classes.navDisplayFlex}>
-                
-                    <Typography className={classes.name}>Imogen Drews</Typography>
-                
-                
-                    <Button className={classes.button}>CV</Button>
+            <Container className={classes.menuDisplay}>
+                <div>{<Menu />} </div>
                 </Container>
+                
+                
             </Toolbar>
         </AppBar>
     )

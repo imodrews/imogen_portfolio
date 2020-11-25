@@ -4,8 +4,10 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Introduction from "./components/Introduction";
-import Cv from "./components/CV";
+import Cv from "./pages/CV";
 import pdf from "./Docs/imocv.pdf";
+import Contact from "./components/Contact";
+import HomePage from './pages/HomePage';
 
 
 const App = () => {
@@ -15,16 +17,28 @@ const App = () => {
         <NavBar />
       </header>
       <main>
-        <Introduction />
-
       <Switch>
         <Route
-          path="/cv"
-          render= {<Cv pdf={pdf} />}
-          />
-         
+          path="/cv">
+           <Cv />
+        </Route>
+        
+        <Route
+          path="/contact">
+           <Contact />     
+          </Route> 
+        <Route
+        exact
+        path="/">
+          <HomePage />
+        </Route>
       </Switch>
+        
+       
+
+     
       </main>
+      
       <footer>
         <Footer />
 

@@ -1,30 +1,24 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
+import '../App.css'
+const font1 =  "'Alfa Slab One', cursive";
+
+
+
+
+
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: purple[500],
+      main: '#ffffcc',
     },
     secondary: {
-      main: green[500],
+      main: '#000000',
     },
   },
-  typography: {
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ]
-}
+    typography: {
+      fontFamily: font1,
+      }
 });
 
 export default theme; 
