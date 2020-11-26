@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import theme from "./theme";
 import '../App.css';
+import image from "../images/pokeHomepage.png";
 
 
 import { Typography, Box, CardMedia, Avatar, Grid} from '@material-ui/core';
@@ -37,15 +38,15 @@ introBox: {
 
     media: {
         
-        alignContent: 'center',
+        
         width: '200px',
         height: '200px',
-        marginBottom: "250px"
+        marginBottom: "50px"
     },
 
         hero: {
             backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1422360902398-0a91ff2c1a1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1316&q=80')`,
-            height: "700px",
+            height: "800px",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -71,9 +72,37 @@ introBox: {
             bottomPadding: "20px"
 
         },
-        position: {
+        portfolio: {
+            bottomPadding: "10px"
             
+        },
+        positionHover: {
+            
+            // position: "relative",
+            // bottom: "20px",
+            // right: "20px",
+            //  backgroundColor: "black",
+            //  color: "white",
+            //  paddingLeft: "30px",
+            // paddingRight: "200px",
+            // opacity: "50%",
+          
+            // bottomPadding: "100px",
+            fontSize: "20px",
+            fontFamily: "'Oswald', sans-serif",
+        },
+        projectText: {
+            fontFamily: "'Oswald', sans-serif",
+            fontSize: "30px",
+            margin: "10px",
+            textAlign: 'center'
+        },
+        stackPosition: {
+            position: "relative"
+
         }
+
+
 
 
 
@@ -81,14 +110,17 @@ introBox: {
 
 
 const Introduction = () => {
+    const [isShown, setIsShown] = useState(false);
+
 
 
 
 const classes = useStyles();
   
 return(
-    
- <Box className={classes.position}>      
+<>
+<Grid >
+     
     <Box className={classes.hero}>
         <Box>
         <Typography className={classes.name}>Imogen Drews</Typography>
@@ -96,18 +128,54 @@ return(
         <Box>
         <Typography className={classes.introduction} color="primary"> Aspiring Junior Web Developer with a love for design </Typography>
         </Box>
-<Grid container justify="center">
-<Avatar
-src={profilePic}
-alt="Imogen's profile"
-className={classes.media}>
-</Avatar>
+        <Box>
+                <Avatar
+                src={profilePic}
+                alt="Imogen's profile"
+                className={classes.media}>
+                </Avatar>
+       </Box>
+    <Box>
+       <Box>
+          <Typography className={classes.projectText}>My Projects</Typography>
+      </Box>
+      <Box>
+    <a href="https://pokemonwbs.netlify.app/">
+      <img
+        src={image}
+        onMouseEnter={() => setIsShown(true)}
+        onMouseLeave={() => setIsShown(false)}
+        width="300px"
+        
+      />
+    </a>
+      </Box>
+      <Box className={classes.stackPosition}>
+      {isShown && <div className={classes.positionHover}>
+      Stack:
+      <br />
+      React 
+      <br />
+      Material UI
+      <br />
+      JavaScript
+      </div>}
+    </Box>
+</Box>
+    </Box>
+    
+
+
+
+
+
 </Grid>
-</Box>
-</Box>
 
 
 
+
+
+</>
 )
 }
 

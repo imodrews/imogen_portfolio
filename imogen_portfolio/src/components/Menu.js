@@ -10,7 +10,8 @@ import { makeStyles } from "@material-ui/core/styles"
 const useStyles = makeStyles(theme => ({
     menu: {
         fontFamily: "'Roboto', sans-serif",
-        
+        textDecoration: "none",
+        color: "black"
     },
 }));
 
@@ -40,14 +41,13 @@ const MyMenu = () => {
         onClose={handleClose}
       >
        <NavLink to="/">
-        <MenuItem onClick={handleClose} className={classes.menu}>Home</MenuItem>
+        <MenuItem onClick={handleClose} className={classes.menu} style={{ textDecoration: 'none' }} >Home</MenuItem>
         </NavLink>
-        <MenuItem onClick={handleClose} className={classes.menu}>About Me</MenuItem>
         <NavLink to="/cv">
-        <MenuItem onClick={handleClose} className={classes.menu}>CV</MenuItem>
+        <MenuItem onClick={handleClose} className={classes.menu} style={{textDecoration: 'none'}}>CV</MenuItem>
         </NavLink>
         <NavLink to="/contact">
-        <MenuItem onClick={handleClose} className={classes.menu}>Contact Me</MenuItem>
+        <MenuItem onClick={handleClose} className={classes.menu} style={{textDecoration: 'none'}}>Contact Me</MenuItem>
         </NavLink>
       </Menu>
     </div>
