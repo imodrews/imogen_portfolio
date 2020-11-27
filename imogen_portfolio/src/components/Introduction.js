@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import theme from "./theme";
+
 import '../App.css';
 import image from "../images/pokeHomepage.png";
 

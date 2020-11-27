@@ -1,5 +1,4 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import '../App.css'
 const font1 =  "'Alfa Slab One', cursive";
 
 
