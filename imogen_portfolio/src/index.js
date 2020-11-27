@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core";
-import theme from './components/theme';
+import theme from '../src/components/theme';
 
 
 ReactDOM.render(
