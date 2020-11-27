@@ -3,9 +3,9 @@ import './App.css';
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Introduction from "./components/Introduction";
+
 import Cv from "./pages/CV";
-import pdf from "./Docs/imocv.pdf";
+
 import Contact from "./components/Contact";
 import HomePage from './pages/HomePage';
 

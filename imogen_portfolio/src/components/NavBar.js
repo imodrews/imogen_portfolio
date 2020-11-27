@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import { AppBar, Toolbar, Button, Typography, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles"
 import '../App.css';
-import Contact from "./Contact";
+
 import Menu from './Menu';
 
 const font =  "'Yeseva One', cursive";
