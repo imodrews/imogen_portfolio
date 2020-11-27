@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core";
-import theme from '../src/components/theme';
+import theme from './theme';
 
 
 ReactDOM.render(
